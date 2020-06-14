@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chimney Volume</title>
+
+<style>
+body {
+	background-color:  #ccf5ff;
+	font-family: Garamond;
+
+}
+
+
+h1 {
+
+text-align: center;
+font-weight: bold;
+}
+
+p {
+
+text-align: center;
+font-size: 1.2em;
+
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<script>document.write('Last modifed on ' + document.lastModified)</script>
+
+<h1>Chimney Volume</h1>
+<p>Volume of an industrial chimney</p>
+
+<p>
+  <label>Height of Chimney</label>
+  <br/>
+  <input id="inputHeight" type="text" placeholder="Enter height">
+  <br/>
+  <br/>
+  <label>Radius of Chimney</label>
+<br/>
+  <input id="inputRadius" type="text" placeholder="Enter radius">
+</p>
+<p>
+<button onclick="Cylinder()">Calculate Volume</button>
+</p>
+<p>Volume: <span id="outputVolume"></span></p>
+
+
+<script>/* When the input field receives input, calculate volumne */
+
+
+function Cylinder() {
+  var height = parseFloat(document.getElementById('inputHeight').value);
+  var radius = parseFloat(document.getElementById('inputRadius').value);
+  var volume = height * Math.PI * Math.pow(radius, 2);
+  //console.log('volume =', volume.toFixed(3));
+  document.getElementById("outputVolume").innerHTML = volume.toFixed(3);
+};
+
+
+</script>
